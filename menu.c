@@ -140,9 +140,18 @@ void manageMenu()			//系统管理菜单
 	printf("------------------------------------------------------------------------\n");
 	printf("\t\t**** 用户管理系统 ****\n");
 	printf("------------------------------------------------------------------------\n");
-	printf("\t\t1.用户管理\n");
-	printf("\t\t2.角色管理\n");
-	printf("\t\t3.权限管理\n");
+	if (strncmp(userInfo, "0000", 4))
+	{
+		printf("\t\t1.用户管理\n");
+	}
+	if (strncmp(userInfo + 4, "0000", 4))
+	{
+		printf("\t\t2.角色管理\n");
+	}
+	if (strncmp(userInfo + 8, "00", 2))
+	{
+		printf("\t\t3.权限管理\n");
+	}
 	printf("\t\t0.退 出\n");
 	printf("------------------------------------------------------------------------\n");
 
@@ -155,27 +164,58 @@ void userManageMenu()			//用户管理菜单
 	printf("------------------------------------------------------------------------\n");
 	printf("\t----用户管理\n");
 	printf("------------------------------------------------------------------------\n");
-	printf("\t\t1.增加用户.\n");
-	printf("\t\t2.删除用户.\n");
-	printf("\t\t3.修改用户.\n");
-	printf("\t\t4.查询用户.\n");
+	if (userInfo[0] == '1')
+	{
+		printf("\t\t1.增加用户.\n");
+	}
+	if (userInfo[1] == '1')
+	{
+		printf("\t\t2.删除用户.\n");
+	}
+	if (userInfo[2] == '1')
+	{
+		printf("\t\t3.修改用户.\n");
+	}
+	if (userInfo[3] == '1')
+	{
+		printf("\t\t4.查询用户.\n");
+	}
 	printf("\t\t0.退 出.\n");
 	printf("------------------------------------------------------------------------\n");
 }
 
 void roleManageMenu()			//角色管理菜单
 {
-	printf("1.增加角色.\n");
-	printf("2.删除角色.\n");
-	printf("3.修改角色.\n");
-	printf("4.查询角色.\n");
+	if (userInfo[4] == '1')
+	{
+		printf("\t\t1.增加角色.\n");
+	}
+	if (userInfo[5] == '1')
+	{
+		printf("\t\t2.删除角色.\n");
+	}
+	if (userInfo[6] == '1')
+	{
+		printf("\t\t3.修改角色.\n");
+	}
+	if (userInfo[7] == '1')
+	{
+		printf("\t\t4.查询角色.\n");
+	}
+	
 	printf("0.退 出.\n");
 }
 
 void permissionManageMenu()		//权限管理菜单
 {
-	printf("1.修改权限.\n");
-	printf("2.查询权限.\n");
+	if (userInfo[8] == '1')
+	{
+		printf("\t\t1.修改权限.\n");
+	}
+	if (userInfo[9] == '1')
+	{
+		printf("\t\t2.查询权限.\n");
+	}
 	printf("0.退 出.\n");
 }
 
